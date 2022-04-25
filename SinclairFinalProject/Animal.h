@@ -1,6 +1,6 @@
 #ifndef Animal_H
 #define Animal_H
-#pragma comment(lib, "libname")
+// #pragma comment(lib, "libname")
 
 //Adding Libararies
 #include<iostream>
@@ -11,6 +11,36 @@
 
 
 using namespace std;
+
+/********************
+PURPOSE: Validate bool 
+user input 
+*********************/ 
+void gettingBoolUserInput(string message, bool& variable) {
+	cout << message;
+	while (!(cin >> variable) || cin.fail() || variable != 1 && variable != 0)
+	{
+		cout << "\nERROR: Please enter 1 or 2";
+		cin.clear();
+		cin.ignore();
+		cout << message;
+	}
+}
+
+/********************
+PURPOSE: Validate int 
+user input 
+********************/ 
+void gettingIntegerUserInput(string message, int& variable) {
+	cout << message;
+	while (!(cin >> variable) || cin.fail())
+	{
+		cout << "\nERROR: Please enter a integer";
+		cin.clear();
+		cin.ignore();
+		cout << message;
+	}
+}
 
 //Making the class 
 class Animal {
@@ -31,7 +61,10 @@ private:
 
 public:
 
-	//Intialization Constructor  
+	/********************
+	PUPOSE: Intialize all 
+	member variables 
+	*********************/
 	Animal(string animalLocation,string animalName, string animalSpecies, bool aggresiveAnswer, deque<string> animalPredators, deque<string> animalPrey){
 
 		//Sending the values to member variables 
@@ -43,7 +76,10 @@ public:
 		prey = animalPrey;
 	}
 
-	//Defualt constructor
+	/************************************
+	PUPOSE: initialize all user
+	values by getting the in the function 
+	*************************************/
 	Animal(){
 		//Variables 
 		bool endPreyLoop = false;
@@ -74,13 +110,7 @@ public:
 				predators.push_back(animalpredator);
 
 				//Asking the user if they want to continue adding predators
-				cout << "\nDo you want to continue adding predators(1. for yes 2. for no): ";
-				while (!(cin >> endPredatorLoop) || cin.fail() || endPredatorLoop != true && endPredatorLoop != false) {
-					cout << "\nERROR: Please input either 1 or 2";
-					cin.clear();
-					cin.ignore();
-					cout << "\nDo you want to continue adding predators(1. for yes 2. for no): ";
-				};
+				gettingBoolUserInput("\nDo you want to continue adding predators(1. for yes 2. for no): ", endPredatorLoop);
 			}
 
 			//Getting the animal's prey
@@ -92,19 +122,17 @@ public:
 				prey.push_back(animalprey);
 
 				//Asking the user if they want to continue adding predators
-				cout << "\nDo you want to continue adding prey(1. for yes 2. for no): ";
-				while (!(cin >> endPreyLoop) || cin.fail() || endPreyLoop != true && endPreyLoop != false) {
-					cout << "\nERROR: Please input either 1 or 2";
-					cin.clear();
-					cin.ignore();
-					cout << "\nDo you want to continue adding prey(1. for yes 2. for no): ";
-				};
+				gettingBoolUserInput("\nDo you want to continue adding prey(1. for yes 2. for no): ",endPreyLoop);
+				
 			}
 
 
 	}
 
-	//Destructor
+	/***************************
+	PURPOSE: Destory object and 
+	deques 
+	****************************/
 	~Animal()
 	{
 		//Deleting the predators and prey
@@ -112,7 +140,10 @@ public:
 		prey.~deque();
 	}
 
-	//printing all the animals information
+	/********************************** 
+	PURPOSE: 
+	printing all the animals information
+	**********************************/
 	void printingAnimalInformation() const{
 		cout << "\nAnimal Name: " << name;
 		cout << "\nSpecies: " << species;
@@ -133,53 +164,93 @@ public:
 
 	}
 
-	//Returning the species 
+	/*********************************
+	PURPOSE: 
+	Return the species 
+	*********************************/
 	string returnSpecies() const{
 		return species;
 	}
 
-	//Returning if the animal is aggresive 
+	/********************************
+	PURPOSE:
+	Return the animal aggression 
+	********************************/
 	bool returnAnimalAggression() const{
 		return aggresive;
 	}
 
-	//Returning the location
+
+	/*******************************
+	PURPOSE:
+	Return the animal location 
+	********************************/
 	string returnAnimallocation() const{
 		return location;
 	}
 
-	//Returning predators
+	/*******************************
+	PURPOSE:
+	Return the Predators 
+	********************************/
 	deque<string> returnAnimalPredators() const{
 		return predators;
 	}
 
-	//Returning prey
+	/*******************************
+	PURPOSE:
+	Return the prey
+	********************************/
 	deque<string> returnAnimalsPrey() const{
 		return prey;
 	}
 
-	//Changing the name 
+	/*******************************
+	PURPOSE:
+	Change Name 
+	********************************/
 	void changingName(string newName);
 
-	//Changing the location 
+	/*******************************
+	PURPOSE:
+	Change Location 
+	********************************/
 	void changingLocation(string newLocation);
 
-	//Chaning the species 
+	/*******************************
+	PURPOSE:
+	Change Species 
+	********************************/
 	void changingTheSpecies(string newSpecies);
 
-	//changing the aggression
+	/*******************************
+	PURPOSE:
+	Change Aggression 
+	********************************/
 	void changingTheAggressionLevel(bool newAggression);
 
-	//Adding a predator 
+	/*******************************
+	PURPOSE:
+	add predator
+	********************************/
 	void addingAPredator(string newPredator);
 
-	//Deleting a preadator 
+	/*******************************
+	PURPOSE:
+	delete a predator 
+	********************************/
 	void deletingAPredator(string predatorToBeDeleted);
 
-	//Adding a prey 
+	/*******************************
+	PURPOSE:
+	Add animal's prey 
+	********************************/
 	void addingAPrey(string newPrey);
 
-	//Deleting a prey 
+	/*******************************
+	PURPOSE:
+	delete an animal's prey 
+	********************************/
 	void deletingAPrey(string preyToBeDeleted);
 
 };

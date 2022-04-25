@@ -41,5 +41,8 @@
     <ClCompile Include="Amphibians.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mainSourceCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

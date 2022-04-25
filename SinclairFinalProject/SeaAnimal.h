@@ -18,8 +18,17 @@ private:
 	bool isBlind;
 
 public:
-	//Public Functions 
+	//All Parameter constructor 
+	SeaAnimal(int depth, bool gills, bool fins, bool blind) {
+		//Intializing the member variables 
+		depthAnimalIsFound = depth;
+		hasGills = gills;
+		hasFins = fins;
+		isBlind = blind;
+	}
 
+	
 };
 
 #endif
+

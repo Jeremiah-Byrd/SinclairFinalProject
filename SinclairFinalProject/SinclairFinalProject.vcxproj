@@ -149,6 +149,7 @@
     <ClCompile Include="Amphibians.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="LandAnimal.cpp" />
+    <ClCompile Include="mainSourceCode.cpp" />
     <ClCompile Include="SeaAnimal.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

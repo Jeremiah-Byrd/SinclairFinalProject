@@ -2,32 +2,50 @@
 
 
 
-//Changing the name 
+/*******************************
+	PURPOSE:
+	Change Name
+	********************************/
 void Animal::changingName(string newName) {
 	name = newName;
 }
 
-//Changing the location 
+/*******************************
+	PURPOSE:
+	Change Location
+	********************************/
 void Animal::changingLocation(string newLocation) {
 	location = newLocation;
 }
 
-//Chaning the species 
+/*******************************
+	PURPOSE:
+	Change Species
+	********************************/
 void Animal::changingTheSpecies(string newSpecies) {
 	species = newSpecies;
 }
 
-//changing the aggression
+/*******************************
+	PURPOSE:
+	Change Aggression
+	********************************/
 void Animal::changingTheAggressionLevel(bool newAggression) {
 	aggresive = newAggression;
 }
 
-//Adding a predator 
+/*******************************
+	PURPOSE:
+	add predator
+	********************************/
 void Animal::addingAPredator(string newPredator) {
 	predators.push_back(newPredator);
 }
 
-//Deleting a preadator 
+/*******************************
+	PURPOSE:
+	delete a predator
+	********************************/
 void Animal::deletingAPredator(string predatorToBeDeleted) {
 
 	//Variables 
@@ -56,12 +74,18 @@ void Animal::deletingAPredator(string predatorToBeDeleted) {
 	}
 }
 
-//Adding a prey 
+/*******************************
+	PURPOSE:
+	Add animal's prey
+	********************************/
 void Animal::addingAPrey(string newPrey) {
 	prey.push_back(newPrey);
 }
 
-//Deleting a prey 
+/*******************************
+	PURPOSE:
+	delete an animal's prey
+********************************/
 void Animal::deletingAPrey(string preyToBeDeleted) {
 
 	//Variables 
