@@ -15,18 +15,15 @@ using namespace std;
 class Animal {
 
 	
-protected:
-	//Protected Variables 
-	string location;
-	string name;
-	
-	
 private:
 	//Private Variables 
 	string species;
 	bool aggresive;
 	deque<string> predators;
 	deque<string> prey;
+	string location;
+	string name;
+
 
 public:
 
@@ -51,47 +48,54 @@ public:
 	*************************************/
 	Animal(){
 		//Variables 
-		bool endPreyLoop = false;
-		bool endPredatorLoop = false;
+		bool endPreyLoop = true;
+		bool endPredatorLoop = true;
 		string animalprey;
 		string animalpredator;
 
 			//Getting the animal name 
 			cout << "\nWhat is the animals name: ";
-			cin >> name;
+			getline(cin,name);
 
 			//Getting the species 
 			cout << "\nWhat is the animal's species: ";
-			cin >> species;
+			cin.ignore(1, '\n');
+			getline(cin,species);
+
+			cout << "\nWhere is this animal located: ";
+			cin.ignore(1, '\n');
+			getline(cin,location);
 
 			//Getting the answer to animal aggresion 
-			cout << "\nIs this animal aggresive(1. for yes 2. for No): ";
-		    cin >> aggresive;
+		    aggresive = userBoolValueChoice("\nIs this animal aggresive(1. for yes 0. for No): ");
 			
 			//Getting the animal's predators 
 			cout << "\nInput each of the animals questions one at a time when asked";
 
-			while (endPredatorLoop == false)
+			while (endPredatorLoop == true)
 			{
 				//Getting the name
 				cout << "\nwhat is a predator? ";
-				cin >> animalpredator;
+				cin.ignore(1, '\n');
+				getline(cin,animalpredator);
 				predators.push_back(animalpredator);
 
 				//Asking the user if they want to continue adding predators
-				gettingBoolUserInput("\nDo you want to continue adding predators(1. for yes 2. for no): ", endPredatorLoop);
+				endPredatorLoop=userBoolValueChoice("\nDo you want to add another predator(1 for yes or 0 for no): ");
 			}
 
+
 			//Getting the animal's prey
-			while (endPreyLoop == false)
+			while (endPreyLoop == true)
 			{
 				//Getting the name
 				cout << "\nwhat is a one of the animal's prey? ";
-				cin >> animalprey;
+				cin.ignore(1, '\n');
+				getline(cin,animalprey);
 				prey.push_back(animalprey);
 
 				//Asking the user if they want to continue adding predators
-				gettingBoolUserInput("\nDo you want to continue adding prey(1. for yes 2. for no): ",endPreyLoop);
+				endPreyLoop = userBoolValueChoice("\nDo you want to add another prey(1 for yes or 0 for no): ");
 				
 			}
 
@@ -116,7 +120,7 @@ public:
 	void printingAnimalInformation() const{
 		cout << "\nAnimal Name: " << name;
 		cout << "\nSpecies: " << species;
-		cout << "\nIs the species aggresive: ";
+		cout << "\nIs the species aggresive: "; convertingBoolValue(aggresive);
 		cout << "\nLocation: " << location;
 
 		//Looping through the predators deque 

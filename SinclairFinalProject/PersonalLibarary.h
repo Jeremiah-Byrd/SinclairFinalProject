@@ -6,49 +6,61 @@
 #include<deque>
 using namespace std;
 
-/********************
-PURPOSE: Validate bool
-user input
-*********************/
-void gettingBoolUserInput(string message, bool& variable) {
-	
+/*********************************************
+PURPOSE:
+Receive user input for boolean values 
+*********************************************/
+inline bool userBoolValueChoice(string message) {
 	//Variables 
 	int userInput;
 
-	//Getting and validating user input
+	//Asking user for an input 
 	cout << message;
-	while (!(cin >> userInput) || cin.fail() || userInput != 1 && userInput != 2)
+
+	//Validating user choice 
+	while (!(cin >> userInput)||cin.fail()||userInput!=0 && userInput!=1)
 	{
-		cout << "\nERROR: Please enter 1 or 2";
+		cout << "\nERROR: please input a proper value";
 		cin.clear();
 		cin.ignore();
 		cout << message;
 	}
 
-	//Giving the variables a value 
-	variable = (userInput == 1) ? true : false;
+	//Returning the user Value 
+	return (userInput != 1) ? false : true;
 }
 
+/*********************************************
+PURPOSE:
+Convert boolean variables to text
+*********************************************/
+inline void convertingBoolValue(bool variable) {
 
-/********************
-PURPOSE: Validate int
-user input
-********************/
-void gettingIntegerUserInput(string message, int& variable) {
+	//Converting the boolean value 
+	(variable == 0) ? cout << "No" : cout << "Yes";
 
+}
+
+/*********************************************
+PURPOSE:
+Receive user input for boolean values
+*********************************************/
+inline bool userIntValueChoice(string message) {
 	//Variables 
-	int userValueChoice;
+	int userInput;
 
-	//Printing message and validating user input 
+	//Asking user for an input 
 	cout << message;
-	while (!(cin >> userValueChoice) || cin.fail())
+
+	//Validating user choice 
+	while (!(cin >> userInput) || cin.fail())
 	{
-		cout << "\nERROR: Please enter a integer";
+		cout << "\nERROR: please input a proper value";
 		cin.clear();
 		cin.ignore();
 		cout << message;
 	}
 
-	//Giving the variable a value 
-	variable = userValueChoice;
+	//Returning the user Value 
+	return userInput;
 }
