@@ -27,21 +27,24 @@
     <ClInclude Include="Amphibian.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PersonalLibarary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Animal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LandAnimal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SeaAnimal.cpp">
+    <ClCompile Include="mainSourceCode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Amphibians.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mainSourceCode.cpp">
+    <ClCompile Include="SeaAnimal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandAnimal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

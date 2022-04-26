@@ -143,6 +143,7 @@
     <ClInclude Include="Amphibian.h" />
     <ClInclude Include="Animal.h" />
     <ClInclude Include="LandAnimal.h" />
+    <ClInclude Include="PersonalLibarary.h" />
     <ClInclude Include="SeaAnimal.h" />
   </ItemGroup>
   <ItemGroup>

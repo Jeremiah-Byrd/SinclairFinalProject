@@ -1,46 +1,15 @@
 #ifndef Animal_H
 #define Animal_H
-// #pragma comment(lib, "libname")
+
 
 //Adding Libararies
-#include<iostream>
-#include<cmath>
-#include<iomanip>
-#include<string>
-#include<deque>
+#include"PersonalLibarary.h"
+
 
 
 using namespace std;
 
-/********************
-PURPOSE: Validate bool 
-user input 
-*********************/ 
-void gettingBoolUserInput(string message, bool& variable) {
-	cout << message;
-	while (!(cin >> variable) || cin.fail() || variable != 1 && variable != 0)
-	{
-		cout << "\nERROR: Please enter 1 or 2";
-		cin.clear();
-		cin.ignore();
-		cout << message;
-	}
-}
 
-/********************
-PURPOSE: Validate int 
-user input 
-********************/ 
-void gettingIntegerUserInput(string message, int& variable) {
-	cout << message;
-	while (!(cin >> variable) || cin.fail())
-	{
-		cout << "\nERROR: Please enter a integer";
-		cin.clear();
-		cin.ignore();
-		cout << message;
-	}
-}
 
 //Making the class 
 class Animal {
