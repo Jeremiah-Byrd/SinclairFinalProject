@@ -5,47 +5,47 @@
 /*******************************
 	PURPOSE:
 	Change Name
-	********************************/
-void Animal::changingName(string newName) {
+********************************/
+void Animal::setName(string newName) {
 	name = newName;
 }
 
 /*******************************
-	PURPOSE:
-	Change Location
-	********************************/
-void Animal::changingLocation(string newLocation) {
+PURPOSE:
+Change Location
+********************************/
+void Animal::setLocation(string newLocation) {
 	location = newLocation;
 }
 
 /*******************************
-	PURPOSE:
-	Change Species
-	********************************/
-void Animal::changingTheSpecies(string newSpecies) {
+PURPOSE:
+Change Species
+********************************/
+void Animal::setSpecies(string newSpecies) {
 	species = newSpecies;
 }
 
 /*******************************
-	PURPOSE:
-	Change Aggression
-	********************************/
-void Animal::changingTheAggressionLevel(bool newAggression) {
+PURPOSE:
+Change Aggression
+********************************/
+void Animal::setAggressionLevel(bool newAggression) {
 	aggresive = newAggression;
 }
 
 /*******************************
-	PURPOSE:
-	add predator
-	********************************/
+PURPOSE:
+add predator
+********************************/
 void Animal::addingAPredator(string newPredator) {
 	predators.push_back(newPredator);
 }
 
 /*******************************
-	PURPOSE:
-	delete a predator
-	********************************/
+PURPOSE:
+delete a predator
+********************************/
 void Animal::deletingAPredator(string predatorToBeDeleted) {
 
 	//Variables 
@@ -61,7 +61,7 @@ void Animal::deletingAPredator(string predatorToBeDeleted) {
 		if (predatorName == predatorToBeDeleted) {
 			predators.erase(prey.begin() + foundPosition);
 			cout << "\nDeletion Successful! ";
-			return;
+			exit(0);
 		}
 	}
 
@@ -70,14 +70,14 @@ void Animal::deletingAPredator(string predatorToBeDeleted) {
 	{
 		//Printing error message
 		cout << "\nThe predator name could not be found! ";
-		return;
+		exit(0);
 	}
 }
 
 /*******************************
-	PURPOSE:
-	Add animal's prey
-	********************************/
+PURPOSE:
+Add animal's prey
+********************************/
 void Animal::addingAPrey(string newPrey) {
 	prey.push_back(newPrey);
 }
@@ -101,7 +101,7 @@ void Animal::deletingAPrey(string preyToBeDeleted) {
 		if (preyName == preyToBeDeleted) {
 			prey.erase(prey.begin()+foundPosition);
 			cout << "\nDeletion Successful! ";
-			return;
+			exit(0);
 		}
 	}
 
@@ -110,6 +110,6 @@ void Animal::deletingAPrey(string preyToBeDeleted) {
 	{
 	//Printing error message
 	cout << "\nThe prey name could not be found! ";
-	return;
+	exit(0);
 	}
 }

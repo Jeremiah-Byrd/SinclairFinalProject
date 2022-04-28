@@ -28,8 +28,7 @@ private:
 public:
 
 	/********************
-	PUPOSE: Intialize all 
-	member variables 
+	CONSTRUCTOR
 	*********************/
 	Animal(string animalLocation,string animalName, string animalSpecies, bool aggresiveAnswer, deque<string> animalPredators, deque<string> animalPrey){
 
@@ -42,10 +41,6 @@ public:
 		prey = animalPrey;
 	}
 
-	/************************************
-	PUPOSE: initialize all user
-	values by getting the in the function 
-	*************************************/
 	Animal(){
 		//Variables 
 		bool endPreyLoop = true;
@@ -103,8 +98,7 @@ public:
 	}
 
 	/***************************
-	PURPOSE: Destory object and 
-	deques 
+	DESTRUCTOR
 	****************************/
 	~Animal()
 	{
@@ -112,6 +106,7 @@ public:
 		predators.~deque();
 		prey.~deque();
 	}
+
 
 	/********************************** 
 	PURPOSE: 
@@ -138,69 +133,40 @@ public:
 	}
 
 	/*********************************
-	PURPOSE: 
-	Return the species 
+	GETTERS
 	*********************************/
-	string returnSpecies() const{
+	string getSpecies() const{
 		return species;
 	}
 
-	/********************************
-	PURPOSE:
-	Return the animal aggression 
-	********************************/
-	bool returnAnimalAggression() const{
+	bool getAnimalAggression() const{
 		return aggresive;
 	}
 
-
-	/*******************************
-	PURPOSE:
-	Return the animal location 
-	********************************/
-	string returnAnimallocation() const{
+	string getAnimallocation() const{
 		return location;
 	}
 
-	/*******************************
-	PURPOSE:
-	Return the Predators 
-	********************************/
-	deque<string> returnAnimalPredators() const{
+	deque<string> getAnimalPredators() const{
 		return predators;
 	}
 
-	/*******************************
-	PURPOSE:
-	Return the prey
-	********************************/
-	deque<string> returnAnimalsPrey() const{
+	deque<string> getAnimalsPrey() const{
 		return prey;
 	}
 
-	/*******************************
-	PURPOSE:
-	Change Name 
-	********************************/
-	void changingName(string newName);
 
 	/*******************************
-	PURPOSE:
-	Change Location 
+	SETTERS
 	********************************/
-	void changingLocation(string newLocation);
+	void setName(string newName);
 
-	/*******************************
-	PURPOSE:
-	Change Species 
-	********************************/
-	void changingTheSpecies(string newSpecies);
+	void setLocation(string newLocation);
 
-	/*******************************
-	PURPOSE:
-	Change Aggression 
-	********************************/
-	void changingTheAggressionLevel(bool newAggression);
+	void setSpecies(string newSpecies);
+
+	void setAggressionLevel(bool newAggression);
+
 
 	/*******************************
 	PURPOSE:

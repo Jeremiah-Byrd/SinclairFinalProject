@@ -18,25 +18,64 @@ private:
 	bool isBlind;
 
 public:
-	//All Parameter constructor 
-	SeaAnimal(int depth, bool gills, bool fins, bool blind) : Animal() {
-		//Intializing the member variables 
-		depthAnimalIsFound = depth;
-		hasGills = gills;
-		hasFins = fins;
-		isBlind = blind;
+	/******************************
+	CONSTRUCTORS
+	******************************/
+	SeaAnimal(int inputtedDepth,bool inputtedGills,bool inputttedFins,bool inputtedBlind,string animalLocation,string animalName, string animalSpecies, bool aggresiveAnswer,
+		deque<string> animalPredators, deque<string> animalPrey) : Animal(animalLocation, animalName, animalSpecies,
+			aggresiveAnswer, animalPredators, animalPrey) {
+		//Initializing the variables 
+		depthAnimalIsFound = inputtedDepth;
+		hasGills = inputtedGills;
+		hasFins = inputttedFins;
+		isBlind = inputtedBlind;
 	}
 
-	//Defualt Constructor 
-	SeaAnimal() {
+	SeaAnimal() : Animal() {
 		//Initializing member variables 
-		depthAnimalIsFound = userIntValueChoice("What depth is this animal found at: ");
-		hasGills = userBoolValueChoice("Does this aquatic animal have gills(1. for yes and 0. for no)");
-		hasFins = userBoolValueChoice("Does this aquatic animal have fins(1. for yes and 0. for no)");
-		isBlind = userBoolValueChoice("Is this aquatic animal blind(1. for yes and 0. for no)");
+		depthAnimalIsFound = 0;
 	}
 
-	
+	/******************************
+	GETTERS
+	******************************/
+	int getDepth() const {
+		return depthAnimalIsFound;
+	}
+
+
+	bool getGills() const {
+		return hasGills;
+	}
+
+
+	bool getFins() const {
+		return hasFins;
+	}
+
+
+	bool getIfBlind() const {
+		return isBlind;
+	}
+
+
+	/******************************
+	SETTERS
+	******************************/
+	void setDepth(int depth);
+
+	void setGills(int gills);
+
+	void setFins(int fins);
+
+	void setIfBlind(int blind);
+
+	/******************************
+	PURPOSE:
+	Display object contents 
+	******************************/
+	// Printing out the object information
+	void displayInfo();
 };
 
 #endif
