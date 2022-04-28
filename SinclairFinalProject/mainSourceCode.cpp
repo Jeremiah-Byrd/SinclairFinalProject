@@ -6,6 +6,9 @@
 
 using namespace std;
 
+//Prototypes
+
+
 int main() {
 	//Variables 
 	SeaAnimal goat;
@@ -13,7 +16,7 @@ int main() {
 	//Getting the variable information
 	goat.printingAnimalInformation();
 
-	
+
 	cin.ignore();
 	cin.get();
 }
