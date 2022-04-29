@@ -62,7 +62,7 @@ public:
 			getline(cin,location);
 
 			//Getting the answer to animal aggresion 
-		    aggresive = userBoolValueChoice("\nIs this animal aggresive(1. for yes 0. for No): ");
+		    aggresive = initializingBoolVariable("\nIs this animal aggresive(1. for yes 0. for No): ");
 			
 			//Getting the animal's predators 
 			cout << "\nInput each of the animals questions one at a time when asked";
@@ -76,7 +76,7 @@ public:
 				predators.push_back(animalpredator);
 
 				//Asking the user if they want to continue adding predators
-				endPredatorLoop=userBoolValueChoice("\nDo you want to add another predator(1 for yes or 0 for no): ");
+				endPredatorLoop=initializingBoolVariable("\nDo you want to add another predator(1 for yes or 0 for no): ");
 			}
 
 
@@ -90,7 +90,7 @@ public:
 				prey.push_back(animalprey);
 
 				//Asking the user if they want to continue adding predators
-				endPreyLoop = userBoolValueChoice("\nDo you want to add another prey(1 for yes or 0 for no): ");
+				endPreyLoop = initializingBoolVariable("\nDo you want to add another prey(1 for yes or 0 for no): ");
 				
 			}
 
@@ -191,6 +191,13 @@ public:
 	delete an animal's prey 
 	********************************/
 	void deletingAPrey(string preyToBeDeleted);
+
+
+	/*******************************
+	PURPOSE:
+	displaying all information
+	********************************/
+	void displayInfo();
 
 };
 

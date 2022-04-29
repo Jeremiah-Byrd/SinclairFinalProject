@@ -30,9 +30,9 @@ Display object contents
 ******************************/
 void SeaAnimal::displayInfo()
 {
+    Animal::displayInfo();
 	cout << "\nDepth animal is found: " << depthAnimalIsFound;
 	cout << "\nDoes this animal  have gills: "; convertingBoolValue(hasGills);
 	cout << "\nDoes this animal have fins: "; convertingBoolValue(hasFins);
 	cout << "\nIs this animal blind: "; convertingBoolValue(isBlind);
-Animal:displayInfo();
 }

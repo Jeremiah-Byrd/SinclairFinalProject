@@ -10,37 +10,47 @@ STRUCTURE
 ********************/
 struct AnimalInfo
 {
-	int numOfLegs;
-	int numOfHands;
-	bool hasGills;
-	bool hasFins;
-	bool hibernates;
+	int handsOfSpecies;
+	int legsOfSpecies;
+	bool animalHasGills;
+	bool animalHasFins;
+	bool animalHibernates;
 	string species;
-	bool aggresive;
-	deque<string> predators;
-	deque<string> prey;
-	string location;
-	string name;
-	string BiomeFound;
-	int numOfLegs;
-	int numOfHands;
-	int numOfPaws;
+	bool animalIsAggressive;
+	deque<string> predatorsOfAnimal;
+	deque<string> preyOfAnimal;
+	string locationOfAnimal;
+	string nameOfAnimal;
+	string biomeAnimalIsFound;
+	int pawsOfAnimal;
 	int depthAnimalIsFound;
-	bool hasGills;
-	bool hasFins;
-	bool isBlind;
+	bool animalIsBlind;
 };
 
 //Prototypes
-void initializingSeaAnimalData(Animal &);
+void exportingData(deque<Animal> &,deque<SeaAnimal> &,deque<LandAnimal> &,deque<Amphibian> &);
+void changeAnimalRecord(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&);
+void viewInfo(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&);
+void addingAnAnimal(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&);
+void deletingAnAnimal(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&);
+void comparingAnimals(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&);
+void initializingSeaAnimalData(SeaAnimal &);
 void initializingAnimalData(Animal &);
-void initializingLandAnimalData(Animal &);
-void initializingAmphibianData(Animal &);
+void initializingLandAnimalData(LandAnimal &);
+void initializingAmphibianData(Amphibian &);
+void introducingUserToProgram();
 int getMenuChoice();
 
 int main() {
 	//Variables 
-	int userMenuChoice;
+	deque<Animal> animalRecords;
+	deque<LandAnimal> landAnimalRecords;
+	deque<SeaAnimal> seaAnimalRecords;
+	deque<Amphibian> AmphibianRecords;
+	int userMenuChoice = 0;
+
+	//Introducing the user to the program 
+	introducingUserToProgram();
 
 	do {
 
@@ -51,25 +61,39 @@ int main() {
 		switch (userMenuChoice)
 		{
 		case 1:
+			//Adding an animal
+			addingAnAnimal(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		case 2:
+			//Deleting an animal 
+			deletingAnAnimal(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		case 3:
+			//Compare Animals 
+			comparingAnimals(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		case 4:
+			//View animals info 
+			viewInfo(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		case 5:
+			//Export binary file of animal information 
+			exportingData(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		case 6:
+			//change animals information 
+			changeAnimalRecord(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 
 		case 7:
+			//Export the file information and close the program 
+			exportingData(animalRecords, seaAnimalRecords, landAnimalRecords, AmphibianRecords);
 
 			break;
 		}
@@ -115,6 +139,15 @@ void initializingAmphibianData(Animal&)
 
 }
 
+/***********************************
+PURPOSE:
+Teaching user how to use the program
+***********************************/
+void introducingUserToProgram()
+{
+
+}
+
 /********************
 PURPOSE:
 Get user menu choice
@@ -129,9 +162,9 @@ int getMenuChoice()
 	cout << "\n1.Add An Animal";
 	cout << "\n2.Delete An Animal";
 	cout << "\n3.Compare Animals";
-	cout << "\n4.View an animal's information";
+	cout << "\n4.View an animal(s) information";
 	cout << "\n5.Export an animals information";
-	cout << "\n6.Veiw all animals of a certain species";
+	cout << "\n6.Change an animal's records";
 	cout << "\n7.End program and save animals to a file";
 
 	//Getting the menu choice 
@@ -146,4 +179,58 @@ int getMenuChoice()
 
 	//Returning the menu choice
 	return userInputtedMenuChoice;
+}
+
+/********************
+PURPOSE:
+export inputted Data
+********************/
+void exportingData(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
+}
+
+/**********************
+PURPOSE:
+Find an animals records
+**********************/
+void changeAnimalRecord(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
+}
+
+/********************
+PURPOSE:
+Veiw animal(s) info
+********************/
+void viewInfo(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
+}
+
+/********************
+PURPOSE:
+add an animal
+********************/
+void addingAnAnimal(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
+}
+
+/********************
+PURPOSE:
+delete an animal
+********************/
+void deletingAnAnimal(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
+}
+
+/********************
+PURPOSE:
+compare animals 
+********************/
+void comparingAnimals(deque<Animal>&, deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
+{
+
 }

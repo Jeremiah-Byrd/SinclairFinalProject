@@ -32,8 +32,15 @@ public:
 	}
 
 	SeaAnimal() : Animal() {
-		//Initializing member variables 
+
+		/****************************
+		Initializing data members 
+		with defualt values
+		****************************/
 		depthAnimalIsFound = 0;
+		hasGills=false;
+		hasFins=false;
+		isBlind=false;
 	}
 
 	/******************************
@@ -74,8 +81,8 @@ public:
 	PURPOSE:
 	Display object contents 
 	******************************/
-	// Printing out the object information
 	void displayInfo();
+
 };
 
 #endif

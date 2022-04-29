@@ -63,6 +63,12 @@ public:
 	void setHands(int inputtedHands);
 
 	void setPaws(int inputtedPaws);
+
+/******************************
+PURPOSE:
+Display object contents
+******************************/
+	void displayInfo();
 };
 
 #endif

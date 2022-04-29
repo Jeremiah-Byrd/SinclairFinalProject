@@ -42,5 +42,5 @@ void Amphibian::displayInfo(){
 	cout << "\nDoes this animal have gills: "; convertingBoolValue(hasGills);
 	cout << "\nDoes this animal have fins: "; convertingBoolValue(hasFins);
 	cout << "\nDoes this animal hibernate: "; convertingBoolValue(hibernates);
-	Animal:displayInfo();
+	Animal::displayInfo();
 }

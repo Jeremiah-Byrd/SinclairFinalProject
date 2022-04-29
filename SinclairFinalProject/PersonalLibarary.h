@@ -10,7 +10,7 @@ using namespace std;
 PURPOSE:
 Receive user input for boolean values 
 *********************************************/
-inline bool userBoolValueChoice(string message) {
+ inline bool initializingBoolVariable(string message) {
 	//Variables 
 	int userInput;
 
@@ -45,7 +45,7 @@ inline void convertingBoolValue(bool variable) {
 PURPOSE:
 Receive user input for boolean values
 *********************************************/
-inline bool userIntValueChoice(string message) {
+ inline bool userIntValueChoice(string message) {
 	//Variables 
 	int userInput;
 
@@ -64,3 +64,17 @@ inline bool userIntValueChoice(string message) {
 	//Returning the user Value 
 	return userInput;
 }
+
+ /*******************************************
+ PURPOSE:
+ Convert a string deque to text 
+ *******************************************/
+ inline void printingStringDeque(deque<string> dequeList) {
+	 
+	 //Printing the deque 
+	 for (unsigned int i = 0; i < dequeList.size(); i++)
+	 {
+		 cout << dequeList[i] << " ";
+	 }
+
+ }

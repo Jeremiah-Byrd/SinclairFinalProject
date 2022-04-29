@@ -113,3 +113,16 @@ void Animal::deletingAPrey(string preyToBeDeleted) {
 	exit(0);
 	}
 }
+
+/*******************************
+	PURPOSE:
+displaying all data members
+********************************/
+void Animal::displayInfo() {
+	cout << "\nName: " << name;
+	cout << "\nSpecies: " << species;
+	cout << "\nLocation: " << location;
+	cout << "\nAggresive: "; convertingBoolValue(aggresive);
+	cout << "\nPredators: "; printingStringDeque(predators);
+	cout << "\nPrey: "; printingStringDeque(prey);
+}
