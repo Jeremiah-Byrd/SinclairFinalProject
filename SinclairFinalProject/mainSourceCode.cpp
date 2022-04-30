@@ -212,7 +212,7 @@ int getMenuChoice()
 	int userInputtedMenuChoice;
 
 	//printed menu  
-	cout << "Menu:\n";
+	cout << "\n\nMenu:\n";
 	cout << "\n1.Add An Animal";
 	cout << "\n2.Delete An Animal";
 	cout << "\n3.Compare Animals";
@@ -481,22 +481,22 @@ void selectingMenuOptionForSeaAnimals(int & foundPosition, deque<SeaAnimal> &sea
 	{
 	case 1:
 		//Set depth
-		seaAnimals[foundPosition].setDepth(initializingIntVariable("*New* What is the depth the animal is found: "));
+		seaAnimals[foundPosition].setDepth(initializingIntVariable("\n*New* What is the depth the animal is found: "));
 
 		break;
 	case 2:
 		//Set blind
-		seaAnimals[foundPosition].setIfBlind(initializingBoolVariable("*New* Is this animal blind: "));
+		seaAnimals[foundPosition].setIfBlind(initializingBoolVariable("\n*New* Is this animal blind(1. for yes 2. for no): "));
 
 		break;
 	case 3:
 		//Adding if the animal has gills
-		seaAnimals[foundPosition].setGills(initializingBoolVariable("*New* Does this animal have gills(1. for yes 2. for no): "));
+		seaAnimals[foundPosition].setGills(initializingBoolVariable("\n*New* Does this animal have gills(1. for yes 2. for no): "));
 
 		break;
 	case 4:
 		//Adding if the animal has fins 
-		seaAnimals[foundPosition].setFins(initializingBoolVariable("*New* Does this animal have fins(1. for yes 2. for no): "));
+		seaAnimals[foundPosition].setFins(initializingBoolVariable("\n*New* Does this animal have fins(1. for yes 2. for no): "));
 
 		break;
 	}
@@ -716,7 +716,7 @@ void printingAllData(deque<SeaAnimal>&seaAnimals, deque<LandAnimal>&landAnimals,
 	}
 
 	//Printing land animals 
-	cout << "\nLand Animals:\n";
+	cout << "\n\nLand Animals:\n";
 	cout << "_________________________________________\n";
 	for (unsigned int i = 0; i < landAnimals.size(); i++)
 	{
@@ -726,7 +726,7 @@ void printingAllData(deque<SeaAnimal>&seaAnimals, deque<LandAnimal>&landAnimals,
 
 	
 	//Printing amphibians 
-	cout << "\nAmphibians:\n";
+	cout << "\n\nAmphibians:\n";
 	cout << "_________________________________________\n";
 	for (unsigned int i = 0; i < amphibians.size(); i++)
 	{

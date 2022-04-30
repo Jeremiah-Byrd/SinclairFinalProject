@@ -95,14 +95,15 @@ Receive user input for boolean values
 
 	 //Asking user for an input 
 	 cout << message;
-	 cin.ignore(1, '\n');
+
+	 //Getting input
+	 cin.ignore(1,'\n');
 	 getline(cin, userInput);
 	
-	
-
 	 //Returning the user Value 
 	 return userInput;
  }
+
 
  /*********************************************
 PURPOSE:
