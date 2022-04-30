@@ -65,6 +65,10 @@ public:
 		return isBlind;
 	}
 
+	string getName() const {
+		return Animal::getName();
+	}
+
 
 	/******************************
 	SETTERS

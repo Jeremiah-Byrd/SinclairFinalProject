@@ -53,6 +53,10 @@ public:
 	int getPaws() const {
 		return numOfPaws;
 	}
+
+	string getName() const {
+	return Animal::getName();
+	}
 	/***********************
 	SETTERS
 	***********************/

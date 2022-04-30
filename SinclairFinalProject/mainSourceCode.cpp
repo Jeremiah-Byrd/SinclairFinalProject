@@ -322,11 +322,11 @@ int searchingForALandAnimal(string& animalToFind, deque<LandAnimal>& landAnimals
 	int positionFound = -1;
 
 	//Looping through the deque to find the position
-	for (int i = 0; i < landAnimals.size(); i++)
+	for (unsigned int i = 0; i < landAnimals.size(); i++)
 	{
 
 		//If the deque element equal animal to find 
-		if (animalToFind == landAnimals[i])
+		if (animalToFind == landAnimals[i].getName())
 		{
 
 			//Return the found position 
@@ -351,11 +351,11 @@ int searchingForASeaAnimal(string& animalToFind, deque<SeaAnimal>& seaAnimals)
 	int positionFound = -1;
 
 	//Looping through the deque to find the position
-	for (int i = 0; i < seaAnimals.size(); i++)
+	for (unsigned int i = 0; i < seaAnimals.size(); i++)
 	{
 
 		//If the deque element equal animal to find 
-		if (animalToFind == seaAnimals[i])
+		if (animalToFind == seaAnimals[i].getName())
 		{
 
 			//Return the found position 
@@ -380,11 +380,11 @@ int searchingForAnAmphibian(string & animalToFind, deque<Amphibian> & amphibians
 	int positionFound = -1;
 
 	//Looping through the deque to find the position
-	for (int i = 0; i < amphibians.size(); i++)
+	for (unsigned int i = 0; i < amphibians.size(); i++)
 	{
 
 		//If the deque element equal animal to find 
-		if (animalToFind == amphibians[i].)
+		if (animalToFind == amphibians[i].getName())
 		{
 
 			//Return the found position 
@@ -559,65 +559,6 @@ void selectingMenuOptionForAmphibians(int &foundPosition, deque<Amphibian>& amph
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**********************
-PURPOSE:
-Find an animals records
-**********************/
-void changeAnimalRecord(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
-{
-	//Variables 
-	string animalBeingSearch = initializingStringVariable("\nWhat animal are you searching for: ");
-	int speciesAnimalIsFrom;
-
-	//Asking the userwhat species the animal is from 
-	while (speciesAnimalIsFrom > 3 || speciesAnimalIsFrom < 1)
-	{
-		cout << "\nPLEASE ENTER: 1 for Sea Animal, 2 for Land Animal, 3 for Amphibians";
-		speciesAnimalIsFrom = initializingIntVariable("\nWhat type of animal is this animal: ");
-	}
-
-	//Searching for 
-	switch (speciesAnimalIsFrom)
-	{
-	case 1:
-
-		//Searching for a sea animal 
-		searchingForASeaAnimal(animalBeingSearch,seaAnimals);
-
-		break;
-	case 2:
-
-		//Searching for a land animal 
-		searchingForALandAnimal(animalBeingSearch,landAnimals);
-
-		break;
-	case 3:
-
-		//Searching for a amphibian
-		searchingForAnAmphibian(animalBeingSearch,amphibians);
-
-		break;
-	}
-
-}
-
 /********************
 PURPOSE:
 Veiw animal(s) info
@@ -626,7 +567,8 @@ void viewInfo(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, dequ
 {
 	//Variables 
 	int menuChoice;
-	string animalToBeViewed;
+	string animalSearched;
+	int speciesSelected = 9;
 
 	//Menu for animl adding options
 	cout << "\nWhat type of animal would you like to add: \n";
@@ -648,62 +590,53 @@ void viewInfo(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, dequ
 	switch (menuChoice)
 	{
 	case 1:
-		//User choice was sea animal 
-		initializingSeaAnimalData(seaAnimals);
+		//User choice was print all
+		printingAllData(seaAnimals,landAnimals,amphibians);
 
 		break;
 	case 2:
-
 		//User choice was a land animal 
-		initializingLandAnimalData(landAnimals);
+		printingSpecificSpecies(seaAnimals,landAnimals,amphibians);
+
 		break;
 	case 3:
+		//Asking user who they want to print
+		while (speciesSelected > 3 || speciesSelected < 1)
+		{
+			cout << "\nPLEASE ENTER: 1 for Sea Animal, 2 for Land Animal, 3 for Amphibians";
+			speciesSelected = initializingIntVariable("\nWhat type of animal is this animal: ");
+		}
 
-		//User choice was an amphibian
-		initializingAmphibianData(amphibians);
+		//Asking user for name to be searched
+		animalSearched = initializingStringVariable("\nWhat is the animals name: ");
+
+		//Finding specific species code
+		switch (speciesSelected)
+		{
+		case 1:
+			//User choice sea animal 
+			printingASeaAnimal(animalSearched, seaAnimals);
+
+			break;
+		case 2:
+			//User choice land animal 
+			printingALandAnimal(animalSearched, landAnimals);
+
+			break;
+		case 3:
+			//User choice amphibian 
+			printingAnAmphibian(animalSearched, amphibians);
+
+			break;
+		}
+
 		break;
 	}
 }
 
 /********************
 PURPOSE:
-delete an animal
-********************/
-void deletingAnAnimal(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
-{
-
-}
-
-/********************
-PURPOSE:
-compare animals 
-********************/
-void comparingAnimals(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
-{
-
-}
-
-/********************
-PURPOSE:
-compare animals
-********************/
-void printingAllData(deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
-{
-
-}
-
-/********************
-PURPOSE:
-compare animals
-********************/
-void printingSpecificSpecies(deque<SeaAnimal>&, deque<LandAnimal>&, deque<Amphibian>&)
-{
-
-}
-
-/********************
-PURPOSE:
-compare animals
+Printing land animals 
 ********************/
 void printingALandAnimal(string& userSearch, deque<LandAnimal>& landAnimals)
 {
@@ -766,5 +699,201 @@ void printingAnAmphibian(string &userSearch, deque<Amphibian> &Amphibians)
 		cout << "\nERROR: Animal not found";
 	}
 }	
+
+/********************
+PURPOSE:
+printing all animals
+********************/
+void printingAllData(deque<SeaAnimal>&seaAnimals, deque<LandAnimal>&landAnimals, deque<Amphibian>&amphibians)
+{
+	//Printing sea animals 
+	cout << "\nSea Animals:\n";
+	cout << "_________________________________________\n";
+	for (unsigned int i = 0; i < seaAnimals.size(); i++)
+	{
+		//Displaying info
+		seaAnimals[i].displayInfo();
+	}
+
+	//Printing land animals 
+	cout << "\nLand Animals:\n";
+	cout << "_________________________________________\n";
+	for (unsigned int i = 0; i < landAnimals.size(); i++)
+	{
+		//Displaying info
+		landAnimals[i].displayInfo();
+	}
+
+	
+	//Printing amphibians 
+	cout << "\nAmphibians:\n";
+	cout << "_________________________________________\n";
+	for (unsigned int i = 0; i < amphibians.size(); i++)
+	{
+		//Displaying info
+		amphibians[i].displayInfo();
+	}
+}
+
+/********************
+PURPOSE:
+Printing all animals 
+of a species 
+********************/
+void printingSpecificSpecies(deque<SeaAnimal>&seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
+{
+	//Variables 
+	int userMenuChoice = 4;
+
+	//Asking the userwhat species to print 
+	while (userMenuChoice > 3 || userMenuChoice < 1)
+	{
+		cout << "\nPLEASE ENTER: 1 for Sea Animal, 2 for Land Animal, 3 for Amphibians";
+		userMenuChoice = initializingIntVariable("\nWhat type of animal is this animal: ");
+	}
+
+	//Printing species 
+	switch (userMenuChoice)
+	{
+	case 1:
+		for (unsigned int i = 0; i < seaAnimals.size(); i++)
+		{
+			//Displaying info
+			seaAnimals[i].displayInfo();
+		}
+		break;
+	case 2:
+		//Printing land animals 
+		for (unsigned int i = 0; i < landAnimals.size(); i++)
+		{
+			//Displaying info
+			landAnimals[i].displayInfo();
+		}
+		break;
+	case 3:
+		//Printing amphibians
+		for (unsigned int i = 0; i < amphibians.size(); i++)
+		{
+			//Displaying info
+			amphibians[i].displayInfo();
+		}
+		break;
+	}
+}
+
+/**********************
+PURPOSE:
+Find an animals records
+**********************/
+void changeAnimalRecord(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
+{
+	//Variables 
+	string animalBeingSearch = initializingStringVariable("\nWhat animal are you searching for: ");
+	int foundPosition = -1;
+	int speciesAnimalIsFrom = 4;
+
+	//Asking the userwhat species the animal is from 
+	while (speciesAnimalIsFrom > 3 || speciesAnimalIsFrom < 1)
+	{
+		cout << "\nPLEASE ENTER: 1 for Sea Animal, 2 for Land Animal, 3 for Amphibians";
+		speciesAnimalIsFrom = initializingIntVariable("\nWhat type of animal is this animal: ");
+	}
+
+	//Searching for 
+	switch (speciesAnimalIsFrom)
+	{
+	case 1:
+
+		//Searching for a sea animal 
+		foundPosition = searchingForASeaAnimal(animalBeingSearch,seaAnimals);
+
+		//If found 
+		if (foundPosition > -1)
+		{
+			selectingMenuOptionForSeaAnimals(foundPosition,seaAnimals);
+		}
+		else {
+			cout << "\nERROR: Unable to find animal";
+		}
+		
+		break;
+	case 2:
+
+		//Searching for a land animal
+		foundPosition = searchingForALandAnimal(animalBeingSearch, landAnimals);
+
+		//If found 
+		if (foundPosition > -1)
+		{
+			selectingMenuOptionForLandAnimals(foundPosition, landAnimals);
+		}
+		else {
+			cout << "\nERROR: Unable to find animal";
+		}
+
+		break;
+	case 3:
+
+		//Searching for a amphibian
+		foundPosition = searchingForAnAmphibian(animalBeingSearch, amphibians);
+
+		//If found 
+		if (foundPosition > -1)
+		{
+			selectingMenuOptionForAmphibians(foundPosition, amphibians);
+		}
+		else {
+			cout << "\nERROR: Unable to find animal";
+		}
+
+		break;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************
+PURPOSE:
+delete an animal
+********************/
+void deletingAnAnimal(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
+{
+	
+}
+
+/********************
+PURPOSE:
+compare animals 
+********************/
+void comparingAnimals(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
+{
+
+}
+
+
+
+
+
 
 
