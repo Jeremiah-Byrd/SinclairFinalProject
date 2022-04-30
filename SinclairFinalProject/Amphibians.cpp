@@ -5,27 +5,27 @@ using namespace std;
 SETTERS
 **************************************/
 
-void Amphibian::getNumOfLegs(int inputtedLegs) 
+void Amphibian::setNumOfLegs(int inputtedLegs) 
 {
 	numOfLegs = inputtedLegs;
 }
 
-void Amphibian::getNumOfHands(int inputtedHands)
+void Amphibian::setNumOfHands(int inputtedHands)
 {
 	numOfHands = inputtedHands;
 }
 
-void Amphibian::getGills(bool inputtedIfGills)
+void Amphibian::setGills(bool inputtedIfGills)
 {
 	hasGills = inputtedIfGills;
 }
 
-void Amphibian::getFins(bool inputtedIfFins)
+void Amphibian::setFins(bool inputtedIfFins)
 {
 	hasFins = inputtedIfFins;
 }
 
-void Amphibian::getHibernates(bool inputtedHibernates)
+void Amphibian::setHibernates(bool inputtedHibernates)
 {
 	hibernates = inputtedHibernates;
 }

@@ -47,23 +47,27 @@ public:
 		return hibernates;
 	}
 
+	string getName() const {
+		return Animal::getName();
+	}
+
 	/**************************************
 	SETTERS
 	**************************************/
 	//setting the number of legs 
-	void getNumOfLegs(int inputtedLegs);
+	void setNumOfLegs(int inputtedLegs);
 
 	//setting the number of hands
-	void getNumOfHands(int inputtedHands);
+	void setNumOfHands(int inputtedHands);
 
 	//setting if the species has gills 
-	void getGills(bool inputtedIfGills);
+	void setGills(bool inputtedIfGills);
 
 	//setting if the species has fins 
-	void getFins(bool inputtedIfFins);
+	void setFins(bool inputtedIfFins);
 
 	//settting if the species can hibernate
-	void getHibernates(bool inputtedHibernates);
+	void setHibernates(bool inputtedHibernates);
 
 	/**************************************
 	Constructors 

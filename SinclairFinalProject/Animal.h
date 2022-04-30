@@ -151,8 +151,12 @@ public:
 		return predators;
 	}
 
-	deque<string> getAnimalsPrey() const{
+	deque<string> getAnimalsPrey() const {
 		return prey;
+	}
+
+	string getName() const {
+		return name;
 	}
 
 

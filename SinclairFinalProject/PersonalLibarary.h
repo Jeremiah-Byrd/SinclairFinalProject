@@ -4,6 +4,7 @@
 #include<iomanip>
 #include<string>
 #include<deque>
+#include<fstream>
 using namespace std;
 
 /*********************************************
@@ -26,6 +27,11 @@ Receive user input for boolean values
 		cout << message;
 	}
 
+	//Ignoring the enter 
+	if (userInput == false) {
+		cin.ignore(1, '\n');
+	}
+
 	//Returning the user Value 
 	return (userInput != 1) ? false : true;
 }
@@ -45,7 +51,7 @@ inline void convertingBoolValue(bool variable) {
 PURPOSE:
 Receive user input for boolean values
 *********************************************/
- inline bool userIntValueChoice(string message) {
+ inline bool initializingIntVariable(string message) {
 	//Variables 
 	int userInput;
 
@@ -77,4 +83,52 @@ Receive user input for boolean values
 		 cout << dequeList[i] << " ";
 	 }
 
+ }
+
+ /*********************************************
+PURPOSE:
+Receive user input for boolean values
+*********************************************/
+ inline string initializingStringVariable(string message) {
+	 //Variables 
+	 string userInput;
+
+	 //Asking user for an input 
+	 cout << message;
+	 cin.ignore(1, '\n');
+	 getline(cin, userInput);
+	
+	
+
+	 //Returning the user Value 
+	 return userInput;
+ }
+
+ /*********************************************
+PURPOSE:
+Receive user input for boolean values
+*********************************************/
+ inline deque<string> initializingStringDequeVariable(string message) {
+	 //Variables 
+	 deque<string> userDequeList;
+	 string userStringInput;
+	 bool endLoop = false;
+
+	 //Ignoring the enter for the 
+	 cin.ignore(1, '\n');
+
+	 //Asking the user to input more strings
+	 do
+	 {
+		 //Getting user input for the deque 
+		 userDequeList.push_back(initializingStringVariable(message)); 
+
+		//Asking user if they want to continue loop
+		endLoop = initializingBoolVariable("\nDo you want to stop adding(1. Yes, 0. No): ");
+
+
+	 } while (endLoop!=true);
+
+	 //Returning the user Value 
+	 return userDequeList;
  }
