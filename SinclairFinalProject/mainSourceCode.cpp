@@ -134,9 +134,6 @@ void initializingSeaAnimalData(deque<SeaAnimal>& animals)
 		cout << endl;
 	}
 
-	//Printing the info 
-	record.displayInfo();
-
 	//Adding it to the records
 	animals.push_back(record);
 	
@@ -161,8 +158,6 @@ void initializingLandAnimalData(deque<LandAnimal>& animals)
 	{
 		cout << endl;
 	}
-	//Printing the info 
-	record.displayInfo();
 
 	//Adding it to the records
 	animals.push_back(record);
@@ -187,8 +182,6 @@ void initializingAmphibianData(deque<Amphibian>& animals)
 	{
 		cout << endl;
 	}
-	//Printing the info 
-	record.displayInfo();
 
 	//Adding it to the records
 	animals.push_back(record);
@@ -338,8 +331,6 @@ int searchingForALandAnimal(string& animalToFind, deque<LandAnimal>& landAnimals
 
 			//Return the found position 
 			return i;
-			break;
-
 		}
 	}
 
@@ -367,7 +358,6 @@ int searchingForASeaAnimal(string& animalToFind, deque<SeaAnimal>& seaAnimals)
 
 			//Return the found position 
 			return i;
-			break;
 
 		}
 	}
@@ -396,7 +386,6 @@ int searchingForAnAmphibian(string & animalToFind, deque<Amphibian> & amphibians
 
 			//Return the found position 
 			return i;
-			break;
 
 		}
 	}
@@ -615,7 +604,7 @@ void viewInfo(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, dequ
 		}
 
 		//Asking user for name to be searched
-		animalSearched = initializingStringVariable("\nWhat is the animals name: ");
+		animalSearched = initializingStringVariable("\nWhat is the animals name: ",true);
 
 		//Finding specific species code
 		switch (speciesSelected)
@@ -795,7 +784,7 @@ Find an animals records
 void changeAnimalRecord(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnimals, deque<Amphibian>& amphibians)
 {
 	//Variables 
-	string animalBeingSearch = initializingStringVariable("\nWhat animal are you searching for: ");
+	string animalBeingSearch = initializingStringVariable("\nWhat animal are you searching for: ",true);
 	int foundPosition = -1;
 	int speciesAnimalIsFrom = 4;
 
@@ -880,8 +869,8 @@ void comparingAnimals(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnima
 	
 
 	//Getting the animals Name 
-	animalsBeingCompared[0] = initializingStringVariable("\nWhat is the first animal you want to compare: ");
-	animalsBeingCompared[1] = initializingStringVariable("\nWhat is the second animal you want to compare: ");
+	animalsBeingCompared[0] = initializingStringVariable("\nWhat is the first animal you want to compare: ",true);
+	animalsBeingCompared[1] = initializingStringVariable("\nWhat is the second animal you want to compare: ",true);
 
 	//Getting the species of the animal 
 	while (animalsSpecies[0] > 3 || animalsSpecies[0] < 1 || animalsSpecies[1] > 3 || animalsSpecies[1] < 1)
@@ -928,7 +917,7 @@ void deletingAnAnimal(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnima
 	int foundPosition = -1;
 
 	//Asking the the user for the animal
-	animalName = initializingStringVariable("\nWhat is the animal's name: ");
+	animalName = initializingStringVariable("\nWhat is the animal's name: ",true);
 
 	//What species is it apart of 
 	while (speciesOfAnimal > 3 || speciesOfAnimal < 1 || speciesOfAnimal > 3 || speciesOfAnimal < 1)
@@ -980,4 +969,11 @@ void deletingAnAnimal(deque<SeaAnimal>& seaAnimals, deque<LandAnimal>& landAnima
 
 		break;
 	}
+
+	//Printing error message if not found
+	if (foundPosition==-1)
+	{
+		cout << "\nERROR: Animal not found";
+	}
+
 }
