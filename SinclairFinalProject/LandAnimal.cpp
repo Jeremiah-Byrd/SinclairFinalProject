@@ -44,7 +44,7 @@ void LandAnimal::displayInfo()
 {
 	Animal::displayInfo();
 	cout << "\nBiome animal is found:  " << BiomeFound;
-	cout << "\nNumber of legs animal has: "; convertingBoolValue(numOfLegs);
-	cout << "\nNumber of hands animal has: "; convertingBoolValue(numOfHands);
-	cout << "\nNumber of paws animal has: "; convertingBoolValue(numOfPaws); cout << "\n";
+	cout << "\nNumber of legs animal has: " << numOfLegs;
+	cout << "\nNumber of hands animal has: " << numOfHands;
+	cout << "\nNumber of paws animal has: " << numOfPaws << "\n";
 }

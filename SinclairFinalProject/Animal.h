@@ -42,58 +42,10 @@ public:
 	}
 
 	Animal(){
-		//Variables 
-		bool endPreyLoop = true;
-		bool endPredatorLoop = true;
-		string animalprey;
-		string animalpredator;
-
-			//Getting the animal name 
-			cout << "\nWhat is the animals name: ";
-			getline(cin,name);
-
-			//Getting the species 
-			cout << "\nWhat is the animal's species: ";
-			cin.ignore(1, '\n');
-			getline(cin,species);
-
-			cout << "\nWhere is this animal located: ";
-			cin.ignore(1, '\n');
-			getline(cin,location);
-
-			//Getting the answer to animal aggresion 
-		    aggresive = initializingBoolVariable("\nIs this animal aggresive(1. for yes 0. for No): ");
-			
-			//Getting the animal's predators 
-			cout << "\nInput each of the animals questions one at a time when asked";
-
-			while (endPredatorLoop == true)
-			{
-				//Getting the name
-				cout << "\nwhat is a predator? ";
-				cin.ignore(1, '\n');
-				getline(cin,animalpredator);
-				predators.push_back(animalpredator);
-
-				//Asking the user if they want to continue adding predators
-				endPredatorLoop=initializingBoolVariable("\nDo you want to add another predator(1 for yes or 0 for no): ");
-			}
-
-
-			//Getting the animal's prey
-			while (endPreyLoop == true)
-			{
-				//Getting the name
-				cout << "\nwhat is a one of the animal's prey? ";
-				cin.ignore(1, '\n');
-				getline(cin,animalprey);
-				prey.push_back(animalprey);
-
-				//Asking the user if they want to continue adding predators
-				endPreyLoop = initializingBoolVariable("\nDo you want to add another prey(1 for yes or 0 for no): ");
-				
-			}
-
+		//Initializing variables
+		 name = "not inputted yet";
+		 location = "not inputted yet";
+		 species = "not inputted yet";
 
 	}
 
@@ -105,31 +57,6 @@ public:
 		//Deleting the predators and prey
 		predators.~deque();
 		prey.~deque();
-	}
-
-
-	/********************************** 
-	PURPOSE: 
-	printing all the animals information
-	**********************************/
-	void printingAnimalInformation() const{
-		cout << "\nAnimal Name: " << name;
-		cout << "\nSpecies: " << species;
-		cout << "\nIs the species aggresive: "; convertingBoolValue(aggresive);
-		cout << "\nLocation: " << location;
-
-		//Looping through the predators deque 
-		cout << "\nPredators: ";
-		for (string predator : predators) {
-			cout << predator << " , ";
-		}
-
-		//Looping though the prey deque
-		cout << "\nPrey: ";
-		for (string food : prey) {
-			cout << food << " , ";
-		}
-
 	}
 
 	/*********************************

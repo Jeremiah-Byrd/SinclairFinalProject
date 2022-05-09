@@ -51,7 +51,7 @@ inline void convertingBoolValue(bool variable) {
 PURPOSE:
 Receive user input for boolean values
 *********************************************/
- inline bool initializingIntVariable(string message) {
+ inline int initializingIntVariable(string message) {
 	//Variables 
 	int userInput;
 
@@ -66,6 +66,7 @@ Receive user input for boolean values
 		cin.ignore();
 		cout << message;
 	}
+
 
 	//Returning the user Value 
 	return userInput;
@@ -89,15 +90,21 @@ Receive user input for boolean values
 PURPOSE:
 Receive user input for boolean values
 *********************************************/
- inline string initializingStringVariable(string message) {
+ inline string initializingStringVariable(string message,bool clearingEndLineNeeded = false) {
 	 //Variables 
 	 string userInput;
 
 	 //Asking user for an input 
 	 cout << message;
 
+	 //Deciding if an extra /n is needed
+	 if (clearingEndLineNeeded ==true)
+	 {
+		 //clearing the newline
+		 cin.ignore(1, '\n');
+	 }
+
 	 //Getting input
-	 cin.ignore(1,'\n');
 	 getline(cin, userInput);
 	
 	 //Returning the user Value 
@@ -115,14 +122,11 @@ Receive user input for boolean values
 	 string userStringInput;
 	 bool endLoop = false;
 
-	 //Ignoring the enter for the 
-	 cin.ignore(1, '\n');
-
 	 //Asking the user to input more strings
 	 do
 	 {
 		 //Getting user input for the deque 
-		 userDequeList.push_back(initializingStringVariable(message)); 
+		 userDequeList.push_back(initializingStringVariable(message,true)); 
 
 		//Asking user if they want to continue loop
 		endLoop = initializingBoolVariable("\nDo you want to stop adding(1. Yes, 0. No): ");

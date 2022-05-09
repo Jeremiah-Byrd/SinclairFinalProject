@@ -153,6 +153,9 @@
     <ClCompile Include="mainSourceCode.cpp" />
     <ClCompile Include="SeaAnimal.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CppProperties.json" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

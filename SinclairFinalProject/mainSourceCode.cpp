@@ -125,7 +125,7 @@ void initializingSeaAnimalData(deque<SeaAnimal>& animals)
 	SeaAnimal record(initializingIntVariable("\nWhat is the depth this animal is found: "),initializingBoolVariable("\nDoes this animal have gills(1. Yes, 2. No): ")
 		,initializingBoolVariable("\nDoes this animal have fins(1. Yes, 2. No): "),initializingBoolVariable("\nIs this animal blind(1. Yes, 2. No): ")
 		,initializingStringVariable("\nWhere is this animal located: "),initializingStringVariable("\nWhat is this animals name: "),
-		initializingStringVariable("\nWhat species is this animal apart of: "),initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
+		initializingStringVariable("\nWhat species is this animal apart of: ",true),initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
 		initializingStringDequeVariable("\nWhat is this animal's predator: "),initializingStringDequeVariable("\nWhat is this animal's prey: "));
 	
 	//Clearing screen
@@ -133,6 +133,9 @@ void initializingSeaAnimalData(deque<SeaAnimal>& animals)
 	{
 		cout << endl;
 	}
+
+	//Printing the info 
+	record.displayInfo();
 
 	//Adding it to the records
 	animals.push_back(record);
@@ -150,7 +153,7 @@ void initializingLandAnimalData(deque<LandAnimal>& animals)
 	LandAnimal record(initializingStringVariable("\nWhat biome is this animal found: "), initializingIntVariable("\nhow many legs does this animal have: ")
 		, initializingIntVariable("\nHow many hands does this animal have: "), initializingIntVariable("\nHow many paws does this animal have: ")
 		, initializingStringVariable("\nWhere is this animal located: "), initializingStringVariable("\nWhat is this animals name: "),
-		initializingStringVariable("\nWhat species is this animal apart of: "), initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
+		initializingStringVariable("\nWhat species is this animal apart of: ",true), initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
 		initializingStringDequeVariable("\nWhat is this animal's predator: "), initializingStringDequeVariable("\nWhat is this animal's prey: "));
 
 	//Clearing screen
@@ -158,6 +161,8 @@ void initializingLandAnimalData(deque<LandAnimal>& animals)
 	{
 		cout << endl;
 	}
+	//Printing the info 
+	record.displayInfo();
 
 	//Adding it to the records
 	animals.push_back(record);
@@ -174,7 +179,7 @@ void initializingAmphibianData(deque<Amphibian>& animals)
 	Amphibian record(initializingIntVariable("\nHow many legs does this animal have: "), initializingIntVariable("\nHow many hands does this animal have: ")
 		, initializingBoolVariable("\nDoes this animal have gills(1. Yes, 2. No): "), initializingBoolVariable("\nDoes this animal have fins(1. Yes, 2. No): ")
 		,initializingBoolVariable("\nDoes this animal hibernate(1. Yes, 2. No): "), initializingStringVariable("\nWhere is this animal located: "), initializingStringVariable("\nWhat is this animals name: "),
-		initializingStringVariable("\nWhat species is this animal apart of: "), initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
+		initializingStringVariable("\nWhat species is this animal apart of: ",true), initializingBoolVariable("\nIs this animal aggressive(1. Yes, 2. No): "),
 		initializingStringDequeVariable("\nWhat is this animal's predator: "), initializingStringDequeVariable("\nWhat is this animal's prey: "));
 
 	//Clearing screen
@@ -182,6 +187,8 @@ void initializingAmphibianData(deque<Amphibian>& animals)
 	{
 		cout << endl;
 	}
+	//Printing the info 
+	record.displayInfo();
 
 	//Adding it to the records
 	animals.push_back(record);
